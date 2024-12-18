@@ -44,6 +44,7 @@ code .
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 - Retournez à l'invite de commande et créez les composants nécessaires pour votre landing page :
+
 ```bash
 ng g c nom-du-composant
 ```
@@ -70,8 +71,6 @@ ctrl + c
 ##  Structure du Projet
 Voici une structure de base pour le projet :
 
-bash
-Copier le code 
 ├── src/                      # Code source principal  
 │   ├── app/                  # Composants et modules Angular  
 │   ├── assets/               # Ressources statiques (images, CSS, etc.)  
