@@ -1,0 +1,64 @@
+html {
+    scroll-behavior: smooth;
+  }
+.all{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* navbar top */
+.navbar-top {
+   background-color: black;
+    color: white;
+    padding: 3px 0;
+    font-size: 14px;
+    
+    
+}
+.bg{
+    background-color: #c21c10;
+    padding: 3px 0px; 
+    font-size: 14px;
+}
+/* navbar principale */
+.navbar{
+    padding: 20px 0;
+}
+
+.navbar-logo {
+    font-size: 70px;
+    font-weight: bold;
+}
+.btn-training {
+    border: 2px solid #c21c10;
+    color: #c21c10;
+    padding: 5px 10px; 
+    font-weight: bold; 
+}
+.btn-training:hover {
+    background-color: #c21c10;
+    color: white;
+}
+.active-tab{
+    color: #da3a2e;
+    opacity: 100%; /* pour avoir la couleur du texte sur la page active */
+}
+.nav-link.active-tab{
+    color: #da3a2e !important; 
+    opacity: 100%; /* pour avoir la couleur du texte sur la page active */
+}
+.nav-link:hover{
+    color: #da3a2e;
+}
+.nav-item{
+    font-weight: 800;
+    margin-right: 25px;
+    font-size: 14px;
+    color: black;
+}
+.navbar-brand>img{
+    width: 150px;
+    height: 70px;
+}

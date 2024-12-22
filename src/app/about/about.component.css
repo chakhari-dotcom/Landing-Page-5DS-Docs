@@ -1,0 +1,12 @@
+#about {
+    background-color: #f9f9f9; /* Arrière-plan clair */
+  }
+  
+  #about h2 {
+    color: #333; /* Couleur du titre */
+  }
+  
+  #about ul li span {
+    font-size: 1.1rem; /* Taille des icônes ✔ */
+  }
+  

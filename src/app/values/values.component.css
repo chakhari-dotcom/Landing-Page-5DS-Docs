@@ -1,0 +1,14 @@
+/* This is the CSS for the values component */
+#values h2 {
+    font-weight: bold;
+  }
+  
+  #values h3 {
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  #values p {
+    color: #555;
+  }
+  

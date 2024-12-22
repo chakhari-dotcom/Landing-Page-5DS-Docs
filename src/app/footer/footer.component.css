@@ -1,0 +1,28 @@
+/* Footer Component CSS */
+.footer-logo {
+    height: 80px;
+    width: 250px;
+  }
+  footer{
+    background-color: #131212;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer a {
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: red;
+  }
+  
+  .footer-copy {
+    background-color: black;
+    color: white;
+  }
+  

@@ -1,0 +1,19 @@
+/* This file is used to style the Why Choose Us section */
+#why-choose-us {
+    background-color: #f8f9fa; /* Couleur de fond légère */
+  }
+  
+  #why-choose-us .bg-white {
+    transition: transform 0.3s ease-in-out; /* Effet de transition pour les cartes */
+  }
+  
+  #why-choose-us .bg-white:hover {
+    transform: translateY(-10px); /* Effet de hover pour les cartes */
+  }
+  
+  .position-absolute {
+    top: -10px; 
+    left: 50%; 
+    transform: translateX(-50%); /* Positionnement des cartes */
+  }
+  

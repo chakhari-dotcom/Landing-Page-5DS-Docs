@@ -1,0 +1,65 @@
+/* Contact Component CSS */
+.contact-section {
+    padding: 50px 0;   /* padding top and bottom */
+  }
+  .contact-section h2 {
+    font-size: 1.75rem;  
+  }
+  .contact-section .form-control {
+    border-radius: 5px; 
+  }
+  .contact-section .btn {
+    background-color: #dc3545;
+    color: white;
+    transition: background-color 0.3s ease; /* transition effect on button hover */
+    border-radius: 5px; 
+  }
+  .contact-section .btn:hover {
+    background-color: #b02a37;
+  }
+  .contact-info {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .contact-info i {
+    font-size: 1.5rem;
+    color: #dc3545;
+  }
+  .btn{
+    margin-left: 20px
+  }
+
+  /* Media Queries */
+  
+  /* medium devices (tablets, 768px and up) */
+  @media (max-width: 768px) {
+    .contact-section h2 {
+      font-size: 1.5rem;
+    }
+    .contact-info {
+      padding: 15px;
+    }
+  }
+
+  /* Small devices (landscape phones, 576px and up) */
+  @media (max-width: 576px) {
+    .input {
+      content: center;
+      width: 60%;
+      margin-left: 20px;
+      padding: 12px;
+    }
+    .contact-info {
+      padding: 15px;
+    }
+    .contact-section h2 {
+      font-size: 1.75rem;
+      margin-left: 20px;
+    }
+    .contact-section p {
+      margin-left: 20px;
+    }
+    
+  }
+  

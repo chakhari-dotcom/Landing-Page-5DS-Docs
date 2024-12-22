@@ -1,0 +1,388 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>stage-test documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">stage-test documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  WhyChooseUsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/why-choose-us/why-choose-us.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-why-choose-us</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./why-choose-us.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./why-choose-us.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-why-choose-us&#x27;,
+  standalone: true,
+  imports: [],
+  templateUrl: &#x27;./why-choose-us.component.html&#x27;,
+  styleUrl: &#x27;./why-choose-us.component.css&#x27;
+})
+export class WhyChooseUsComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Section WHY CHOOSE US --&gt;
+&lt;section id&#x3D;&quot;why-choose-us&quot; class&#x3D;&quot;py-5&quot;&gt;
+    &lt;div class&#x3D;&quot;container text-center&quot;&gt;
+      &lt;!-- Titre principal --&gt;
+      &lt;h6 class&#x3D;&quot;text-danger fw-bold mb-3&quot;&gt;WHY CHOOSE US&lt;/h6&gt;
+      &lt;h2 class&#x3D;&quot;fw-bold mb-4&quot;&gt;
+        We&#x27;re seeking for a tailored approach for each project
+      &lt;/h2&gt;
+      &lt;p class&#x3D;&quot;mb-5 text-muted&quot;&gt;
+        Our main objective before our work is to grab the intention of the clients as their desire is the number one element through which we present the reality of what they want.
+      &lt;/p&gt;
+  
+      &lt;!-- Cartes avec numéros --&gt;
+      &lt;div class&#x3D;&quot;row g-4&quot;&gt;
+        &lt;!-- Première Carte --&gt;
+        &lt;div class&#x3D;&quot;  col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;p-4 bg-white shadow-sm rounded&quot;&gt;
+            &lt;div class&#x3D;&quot;position-relative&quot;&gt;
+              &lt;div class&#x3D;&quot;position-absolute top-0 start-50 translate-middle text-white bg-danger px-3 py-1 fw-bold rounded&quot;&gt;
+                1
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h5 class&#x3D;&quot;fw-bold mt-4&quot;&gt;We Listen&lt;/h5&gt;
+            &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+              We listen carefully to your specific circumstances, challenges and goals, to ensure that our solutions are deeply rooted in a comprehensive understanding of your business.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+        &lt;!-- Deuxième Carte --&gt;
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;p-4 bg-white shadow-sm rounded&quot;&gt;
+            &lt;div class&#x3D;&quot;position-relative&quot;&gt;
+              &lt;div class&#x3D;&quot;position-absolute top-0 start-50 translate-middle text-white bg-danger px-3 py-1 fw-bold rounded&quot;&gt;
+                2
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h5 class&#x3D;&quot;fw-bold mt-4&quot;&gt;We Suggest&lt;/h5&gt;
+            &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+              We offer strategic suggestions tailored to your specific needs. We make insightful suggestions that enable your business to face complexity and seize opportunities with confidence.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+        &lt;!-- Troisième Carte --&gt;
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;p-4 bg-white shadow-sm rounded&quot;&gt;
+            &lt;div class&#x3D;&quot;position-relative&quot;&gt;
+              &lt;div class&#x3D;&quot;position-absolute top-0 start-50 translate-middle text-white bg-danger px-3 py-1 fw-bold rounded&quot;&gt;
+                3
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h5 class&#x3D;&quot;fw-bold mt-4&quot;&gt;We Update&lt;/h5&gt;
+            &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+              Our commitment to continuous improvement means we proactively update our strategies, staying in step with industry trends, market changes and your evolving organizational needs.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  </code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Section WHY CHOOSE US --><section id="why-choose-us" class="py-5">    <div class="container text-center">      <!-- Titre principal -->      <h6 class="text-danger fw-bold mb-3">WHY CHOOSE US</h6>      <h2 class="fw-bold mb-4">        We\'re seeking for a tailored approach for each project      </h2>      <p class="mb-5 text-muted">        Our main objective before our work is to grab the intention of the clients as their desire is the number one element through which we present the reality of what they want.      </p>        <!-- Cartes avec numéros -->      <div class="row g-4">        <!-- Première Carte -->        <div class="  col-md-4">          <div class="p-4 bg-white shadow-sm rounded">            <div class="position-relative">              <div class="position-absolute top-0 start-50 translate-middle text-white bg-danger px-3 py-1 fw-bold rounded">                1              </div>            </div>            <h5 class="fw-bold mt-4">We Listen</h5>            <p class="text-muted">              We listen carefully to your specific circumstances, challenges and goals, to ensure that our solutions are deeply rooted in a comprehensive understanding of your business.            </p>          </div>        </div>          <!-- Deuxième Carte -->        <div class="col-md-4">          <div class="p-4 bg-white shadow-sm rounded">            <div class="position-relative">              <div class="position-absolute top-0 start-50 translate-middle text-white bg-danger px-3 py-1 fw-bold rounded">                2              </div>            </div>            <h5 class="fw-bold mt-4">We Suggest</h5>            <p class="text-muted">              We offer strategic suggestions tailored to your specific needs. We make insightful suggestions that enable your business to face complexity and seize opportunities with confidence.            </p>          </div>        </div>          <!-- Troisième Carte -->        <div class="col-md-4">          <div class="p-4 bg-white shadow-sm rounded">            <div class="position-relative">              <div class="position-absolute top-0 start-50 translate-middle text-white bg-danger px-3 py-1 fw-bold rounded">                3              </div>            </div>            <h5 class="fw-bold mt-4">We Update</h5>            <p class="text-muted">              Our commitment to continuous improvement means we proactively update our strategies, staying in step with industry trends, market changes and your evolving organizational needs.            </p>          </div>        </div>      </div>    </div>  </section>  </div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarousellogoComponent', 'selector': 'app-carousellogo'},{'name': 'ConsultantsComponent', 'selector': 'app-consultants'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'ValuesComponent', 'selector': 'app-values'},{'name': 'WhyChooseUsComponent', 'selector': 'app-why-choose-us'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'WhyChooseUsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WhyChooseUsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

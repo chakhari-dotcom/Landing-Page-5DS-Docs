@@ -1,0 +1,138 @@
+<!-- Contact Section -->
+  <div class="container  contact-section" id="contact">
+    <div class="row gy-4">
+      <!-- Formulaire -->
+      <div class="col-lg-7 container">
+        <h2 class="text-danger mb-4">Demandez des Informations</h2>
+        <p class="text-muted">Nous ferons de notre mieux pour vous répondre dès que possible.</p>
+        <form [formGroup]="form" (submit)="send()">
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <input type="text" class="form-control input" placeholder="First Name" formControlName="from_name" formControlName="firstName" required />
+            </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control input" placeholder="Last Name" formControlName="lastName" required />
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <input type="tel" class="form-control input" placeholder="phone" formControlName="phone" required />
+            </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control input" placeholder="subject" formControlName="subject" required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control input" placeholder="Email" formControlName="email" required />
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control input" rows="4" placeholder="Message" formControlName="message" required></textarea>
+          </div>
+          <!-- {{form.value | json}} -->
+          <button type="submit" class="btn btn-danger px-5">Envoyer maintenant</button>
+        </form>
+      </div>
+
+      <!-- Informations de contact -->
+      <div class="col-lg-5">
+        <div class="contact-info">
+          <h3 class="text-danger">Vous avez une question ?</h3>
+          <p class="text-muted">Si vous avez des questions, n'hésitez pas à nous envoyer un message.</p>
+          <div class="d-flex align-items-start mb-3">
+            <i class="bi bi-geo-alt me-3"></i>
+            <div>
+              <strong>Adresse</strong>
+              <p>38 Rue de la Glacière, 75013 PARIS - FRANCE</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <i class="bi bi-envelope me-3"></i>
+            <div>
+              <strong>Email</strong>
+              <p>contact&#64;5ds.fr</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-start">
+            <i class="bi bi-telephone me-3"></i>
+            <div>
+              <strong>Téléphone</strong>
+              <p>+33 6 35 397 899</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Contactez-nous</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nom"
+                placeholder="Votre nom"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Votre email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                rows="5"
+                placeholder="Votre message"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h5>Adresse :</h5>
+          <p>123 Rue des Entrepreneurs, Paris</p>
+          <h5>Téléphone :</h5>
+          <p>+33 1 23 45 67 89</p>
+          <h5>Email :</h5>
+          <p>contact&#64;5ds.fr</p>
+        </div>
+      </div>
+    </div>
+  </section>
+   -->

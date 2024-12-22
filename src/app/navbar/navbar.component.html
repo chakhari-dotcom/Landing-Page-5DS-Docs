@@ -1,0 +1,135 @@
+<nav class="all">
+  <!-- Top Bar -->
+  <div class="navbar-top text-center text-md-start">
+    <div class="container d-flex justify-content-between">
+      <div class="bg p-2 rounded-lg text-white ">
+        <span>🕒 Opening hours: Mon - Sat 9:00 - 18:00</span>
+      </div>
+      <div>
+        <span>📞 +33 635 397 899 | ✉️ contact&#64;5ds.fr</span>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar principale -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="assets/logoblanche.png" alt="Logo" width="40" height="40" class="me-2">
+      </a>
+
+      <!-- Bouton pour mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Liens de navigation -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " href="#home" [ngClass]="{'active-tab': selectedTab === 'home'}" (click)="selectTab('home')" >HOME</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link"  href="#about" [ngClass]="{'active-tab': selectedTab === 'about'}" (click)="selectTab('about')">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#values" [ngClass]="{'active-tab': selectedTab === 'values'}" (click)="selectTab('values')" >VALUES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services" [ngClass]="{'active-tab': selectedTab === 'services'}" (click)="selectTab('services')" >SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#consultants" [ngClass]="{'active-tab': selectedTab === 'consultants'}" (click)="selectTab('consultants')">CONSULTANTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"  [ngClass]="{'active-tab': selectedTab === 'contact'}" (click)="selectTab('contact')" >CONTACT</a>
+          </li>
+          <!-- Bouton Training -->
+          <div>
+            <a href="#" class="btn btn-training">Training Information</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="all bg-white">
+ 
+ <div class="navbar-top ">
+   <div class="container">
+    <div class="row d-flex justify-content-between ">
+      <div class=" bg col-md-4 d-flex justify-content-center align-items-center">
+      <p class="mb-0 mt-0"> 🕒 Opening hours: Mon - Sat 9:00 - 18:00</p>
+    </div>
+      <div class="col-md-6 justify-content-end d-flex align-items-center">
+        <p class="mb-0"> 📞 +33 635 397 899| ✉️ contact&#64;5ds.fr</p>
+      </div>
+    </div>
+ </div>
+
+  <!-- Navbar principale -->
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+      <img class="img-fluid" src="assets/logoblanche.png" style="height: 50px;" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#consultants">Consultants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#values">Values</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="justify-content-end ms-5">
+        <button class="btn btn-training ">Training Information</button>
+      </div>
+      </div>
+    </div>
+  </nav>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -->

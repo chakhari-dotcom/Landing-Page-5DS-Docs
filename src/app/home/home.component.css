@@ -1,0 +1,24 @@
+.carousel-inner img {
+    height: 600px; 
+    object-fit: cover; /* Assure un ajustement parfait des images */
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
+  
+  .navbar-brand span {
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+
+ 
+  
+  
