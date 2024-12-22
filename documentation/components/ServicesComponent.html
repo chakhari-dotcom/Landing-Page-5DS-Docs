@@ -202,94 +202,98 @@ export class ServicesComponent {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">
-  &lt;div class&#x3D;&quot;container text-center py-5&quot; id&#x3D;&quot;services&quot;&gt;
-    &lt;h2 class&#x3D;&quot;text-uppercase text-danger fw-bold&quot;&gt;Our Services&lt;/h2&gt;
-    &lt;h3 class&#x3D;&quot;mb-5&quot;&gt;We&#x27;re Creating Solutions For Your Organization&lt;/h3&gt;
-    &lt;div class&#x3D;&quot;row text-center g-4&quot;&gt;
-      &lt;!-- Bloc Engineering --&gt; 
-      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-        &lt;div class&#x3D;&quot;card border-0 py-4 shadow-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-code-slash fs-1 text-danger&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt; 
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Engineering&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text text-muted &quot;&gt;Software Development / Web &amp; Mobile Development / API Management.&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container text-center py-5&quot; id&#x3D;&quot;services&quot;&gt;
+  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
+  &lt;h5 class&#x3D;&quot;text-uppercase text-danger fw-bold&quot;&gt;Our Services&lt;/h5&gt;
+  &lt;h3 class&#x3D;&quot;mb-5&quot;&gt;We&#x27;re Creating Solutions For Your Organization&lt;/h3&gt;
+  &lt;div class&#x3D;&quot;row  g-4&quot;&gt;
+    &lt;!-- Bloc Engineering --&gt;
+    &lt;div class&#x3D;&quot;col-12 col-sm-4 col-md-4 col-lg-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-0 py-4 shadow-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+          &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-code-slash fs-1 text-danger&quot;&gt;&lt;/i&gt;
           &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;!-- Bloc Cloud Solutions --&gt;
-      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-        &lt;div class&#x3D;&quot;card border-0 py-4 shadow-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-cloud fs-1 text-danger&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt;
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Cloud Solutions&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;AWS / Azure / GCP...&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;!-- Bloc Big Data --&gt;
-      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-        &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-bar-chart fs-1 text-danger&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt;
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Big Data&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Business Intelligence / Big Data / Machine &amp; Deep Learning.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-
-      &lt;!-- Bloc Training --&gt;
-      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-        &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-easel fs-1 text-danger&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt;
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Training&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Agile / SCRUM: SM, PO / Développement / Cloud / Gestion / Robotique.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;!-- Bloc Coaching --&gt;
-      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-        &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-people fs-1 text-danger&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt;
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Coaching&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;AGILE Coaching / Governance and Product Management.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;!-- Bloc Design &amp; DM --&gt;
-      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-        &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-palette fs-1 text-danger&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt;
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Design &amp; DM&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Design et gestion des médias numériques.&lt;/p&gt;
-          &lt;/div&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Engineering&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Software Development / Web &amp; Mobile Development / API Management.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
+  
+     &lt;!-- Bloc Cloud Solutions --&gt;
+     &lt;div class&#x3D;&quot; col-12 col-sm-6 col-md-4 col-lg-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-0 py-4 shadow-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+          &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-cloud fs-1 text-danger&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Cloud Solutions&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;AWS / Azure / GCP...&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+       &lt;!-- Bloc Big Data --&gt;
+    &lt;div class&#x3D;&quot; col-12 col-sm-6 col-md-4 col-lg-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+          &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-bar-chart fs-1 text-danger&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Big Data&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Business Intelligence / Big Data / Machine &amp; Deep Learning.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+     &lt;!-- Bloc Training --&gt;
+     &lt;div class&#x3D;&quot; col-12 col-sm-6 col-md-4 col-lg-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+          &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-easel fs-1 text-danger&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Training&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Agile / SCRUM: SM, PO / Développement / Cloud / Gestion / Robotique.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Bloc Coaching --&gt;
+    &lt;div class&#x3D;&quot; col-12 col-sm-6 col-md-4 col-lg-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+          &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-people fs-1 text-danger&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Coaching&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;AGILE Coaching / Governance and Product Management.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Bloc Design &amp; DM --&gt;
+    &lt;div class&#x3D;&quot; col-12 col-sm-6 col-md-4 col-lg-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-0 shadow-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+          &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-palette fs-1 text-danger&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Design &amp; DM&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;Design et gestion des médias numériques.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
 
- 
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+    
+
+   
+
+   
+
+    
+
+    
 </code></pre>
     </div>
 
@@ -319,7 +323,7 @@ export class ServicesComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>  <div class="container text-center py-5" id="services">    <h2 class="text-uppercase text-danger fw-bold">Our Services</h2>    <h3 class="mb-5">We\'re Creating Solutions For Your Organization</h3>    <div class="row text-center g-4">      <!-- Bloc Engineering -->       <div class="col-md-4">        <div class="card border-0 py-4 shadow-lg">          <div class="card-body text-center">            <div class="mb-3">              <i class="bi bi-code-slash fs-1 text-danger"></i>            </div>             <h5 class="card-title">Engineering</h5>            <p class="card-text text-muted ">Software Development / Web & Mobile Development / API Management.</p>          </div>        </div>      </div>      <!-- Bloc Cloud Solutions -->      <div class="col-md-4">        <div class="card border-0 py-4 shadow-lg">          <div class="card-body text-center">            <div class="mb-3">              <i class="bi bi-cloud fs-1 text-danger"></i>            </div>            <h5 class="card-title">Cloud Solutions</h5>            <p class="card-text text-muted">AWS / Azure / GCP...</p>          </div>        </div>      </div>      <!-- Bloc Big Data -->      <div class="col-md-4">        <div class="card border-0 shadow-lg">          <div class="card-body text-center">            <div class="mb-3">              <i class="bi bi-bar-chart fs-1 text-danger"></i>            </div>            <h5 class="card-title">Big Data</h5>            <p class="card-text text-muted">Business Intelligence / Big Data / Machine & Deep Learning.</p>          </div>        </div>      </div>                <!-- Bloc Training -->      <div class="col-md-4">        <div class="card border-0 shadow-lg">          <div class="card-body text-center">            <div class="mb-3">              <i class="bi bi-easel fs-1 text-danger"></i>            </div>            <h5 class="card-title">Training</h5>            <p class="card-text text-muted">Agile / SCRUM: SM, PO / Développement / Cloud / Gestion / Robotique.</p>          </div>        </div>      </div>      <!-- Bloc Coaching -->      <div class="col-md-4">        <div class="card border-0 shadow-lg">          <div class="card-body text-center">            <div class="mb-3">              <i class="bi bi-people fs-1 text-danger"></i>            </div>            <h5 class="card-title">Coaching</h5>            <p class="card-text text-muted">AGILE Coaching / Governance and Product Management.</p>          </div>        </div>      </div>      <!-- Bloc Design & DM -->      <div class="col-md-4">        <div class="card border-0 shadow-lg">          <div class="card-body text-center">            <div class="mb-3">              <i class="bi bi-palette fs-1 text-danger"></i>            </div>            <h5 class="card-title">Design & DM</h5>            <p class="card-text text-muted">Design et gestion des médias numériques.</p>          </div>        </div>      </div>    </div>  </div> </div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container text-center py-5" id="services">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <h5 class="text-uppercase text-danger fw-bold">Our Services</h5>  <h3 class="mb-5">We\'re Creating Solutions For Your Organization</h3>  <div class="row  g-4">    <!-- Bloc Engineering -->    <div class="col-12 col-sm-4 col-md-4 col-lg-4">      <div class="card border-0 py-4 shadow-lg">        <div class="card-body text-center">          <div class="mb-3">            <i class="bi bi-code-slash fs-1 text-danger"></i>          </div>          <h5 class="card-title">Engineering</h5>          <p class="card-text text-muted">Software Development / Web & Mobile Development / API Management.</p>        </div>      </div>    </div>       <!-- Bloc Cloud Solutions -->     <div class=" col-12 col-sm-6 col-md-4 col-lg-4">      <div class="card border-0 py-4 shadow-lg">        <div class="card-body text-center">          <div class="mb-3">            <i class="bi bi-cloud fs-1 text-danger"></i>          </div>          <h5 class="card-title">Cloud Solutions</h5>          <p class="card-text text-muted">AWS / Azure / GCP...</p>        </div>      </div>    </div>       <!-- Bloc Big Data -->    <div class=" col-12 col-sm-6 col-md-4 col-lg-4">      <div class="card border-0 shadow-lg">        <div class="card-body text-center">          <div class="mb-3">            <i class="bi bi-bar-chart fs-1 text-danger"></i>          </div>          <h5 class="card-title">Big Data</h5>          <p class="card-text text-muted">Business Intelligence / Big Data / Machine & Deep Learning.</p>        </div>      </div>    </div>     <!-- Bloc Training -->     <div class=" col-12 col-sm-6 col-md-4 col-lg-4">      <div class="card border-0 shadow-lg">        <div class="card-body text-center">          <div class="mb-3">            <i class="bi bi-easel fs-1 text-danger"></i>          </div>          <h5 class="card-title">Training</h5>          <p class="card-text text-muted">Agile / SCRUM: SM, PO / Développement / Cloud / Gestion / Robotique.</p>        </div>      </div>    </div>    <!-- Bloc Coaching -->    <div class=" col-12 col-sm-6 col-md-4 col-lg-4">      <div class="card border-0 shadow-lg">        <div class="card-body text-center">          <div class="mb-3">            <i class="bi bi-people fs-1 text-danger"></i>          </div>          <h5 class="card-title">Coaching</h5>          <p class="card-text text-muted">AGILE Coaching / Governance and Product Management.</p>        </div>      </div>    </div>    <!-- Bloc Design & DM -->    <div class=" col-12 col-sm-6 col-md-4 col-lg-4">      <div class="card border-0 shadow-lg">        <div class="card-body text-center">          <div class="mb-3">            <i class="bi bi-palette fs-1 text-danger"></i>          </div>          <h5 class="card-title">Design & DM</h5>          <p class="card-text text-muted">Design et gestion des médias numériques.</p>        </div>      </div>    </div>  </div></div>                  </div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarousellogoComponent', 'selector': 'app-carousellogo'},{'name': 'ConsultantsComponent', 'selector': 'app-consultants'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'ValuesComponent', 'selector': 'app-values'},{'name': 'WhyChooseUsComponent', 'selector': 'app-why-choose-us'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ServicesComponent'};

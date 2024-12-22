@@ -153,6 +153,7 @@
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
+                            <code>CommonModule</code>
                             <code>RouterOutlet</code>
                                 <code><a href="../components/FooterComponent.html" target="_self" >FooterComponent</a></code>
                                 <code><a href="../components/NavbarComponent.html" target="_self" >NavbarComponent</a></code>
@@ -253,7 +254,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/app.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/app.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -277,13 +278,16 @@ import { ServicesComponent } from &#x27;./services/services.component&#x27;;
 import { ValuesComponent } from &#x27;./values/values.component&#x27;;
 import { CarousellogoComponent } from &#x27;./carousellogo/carousellogo.component&#x27;;
 import { WhyChooseUsComponent } from &#x27;./why-choose-us/why-choose-us.component&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
+import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
 
 import { FooterComponent } from &#x27;./footer/footer.component&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   standalone: true,
-  imports: [RouterOutlet,FooterComponent, NavbarComponent, HomeComponent,AboutComponent,ContactComponent,ConsultantsComponent, ServicesComponent, ValuesComponent, CarousellogoComponent,WhyChooseUsComponent],
+  imports: [ CommonModule,RouterOutlet,FooterComponent, NavbarComponent, HomeComponent,AboutComponent,ContactComponent,ConsultantsComponent, ServicesComponent, ValuesComponent, CarousellogoComponent,WhyChooseUsComponent],
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrl: &#x27;./app.component.css&#x27;
 })

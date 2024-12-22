@@ -210,7 +210,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#onSubmit" >onSubmit</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#send" >send</a>
                             </li>
                         </ul>
                     </td>
@@ -230,12 +231,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: FormBuilder, http: HttpClient)</code>
+<code>constructor(fb: FormBuilder)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/contact/contact.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/contact/contact.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -257,18 +258,6 @@
                                                   
                                                         <td>
                                                                     <code>FormBuilder</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                    <code>HttpClient</code>
                                                         </td>
                                                   
                                                     <td>
@@ -298,24 +287,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onSubmit"></a>
+                    <a name="send"></a>
                     <span class="name">
-                        <span ><b>onSubmit</b></span>
-                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>send</b></span>
+                        <a href="#send"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onSubmit()</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>send()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/app/contact/contact.component.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/contact/contact.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -324,7 +315,7 @@
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                 </td>
@@ -356,7 +347,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/contact/contact.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/contact/contact.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -370,9 +361,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormGroup,ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { FormBuilder, FormGroup,ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
 import { HttpClient, HttpClientModule} from &#x27;@angular/common/http&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
+import emailjs, { type EmailJSResponseStatus } from &#x27;@emailjs/browser&#x27;;
 
 @Component({
   selector: &#x27;app-contact&#x27;,
@@ -382,21 +374,68 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
   styleUrl: &#x27;./contact.component.css&#x27;
 })
 export class ContactComponent {
-  form: FormGroup;
+    
+   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder) {
     this.form &#x3D; this.fb.group({
-      email: [&#x27;&#x27;],
-      phone: [&#x27;&#x27;],
+      from_name: &#x27;&#x27;,
+      to_name:&#x27;admin&#x27;,
+      firstName: [&#x27;&#x27;, Validators.required],
+      lastName : [&#x27;&#x27;, Validators.required],
+      phone: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]{10}$&#x27;)]],
+      subject: [&#x27;&#x27;, Validators.required],
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      message: [&#x27;&#x27;, Validators.required],
     });
   }
 
-  onSubmit() {
-    const formData &#x3D; this.form.value;
-    this.http.post(&#x27;http://localhost:4200/contact&#x27;, formData).subscribe(response &#x3D;&gt; {
-      console.log(&#x27;Données envoyées avec succès !&#x27;, response);
+async send() {
+    emailjs.init(&quot;Z0alKBaWagoqsaTc-&quot;);
+    let response&#x3D; await emailjs.send(&quot;Gmail_Service_ID&quot;,&quot;template_vip5kim&quot;,{
+    from_name: this.form.value.firstName,
+    to_name: this.form.value.to_name,
+    phone: this.form.value.phone,
+    subject: this.form.value.subject,
+    message: this.form.value.message,
+    first_name: this.form.value.firstName,
+    last_name: this.form.value.lastName,
+    email: this.form.value.email,
     });
-  }
+
+ }
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  // onSubmit() {
+  //   if (this.form.valid) {
+  //     const formData &#x3D; this.form.value;
+  //     this.http.post(&#x27;http://localhost:3000/contact&#x27;, formData).subscribe(
+  //       response &#x3D;&gt; {
+  //         console.log(&#x27;Données envoyées avec succès !&#x27;, response);
+  //       },
+  //       error &#x3D;&gt; {
+  //         console.error(&#x27;Erreur lors de l’envoi des données&#x27;, error);
+  //       }
+  //     );
+  //   } else {
+  //     console.warn(&#x27;Veuillez remplir correctement tous les champs.&#x27;);
+  //   }
+  // }
 
 }
 </code></pre>
@@ -410,29 +449,30 @@ export class ContactComponent {
       &lt;div class&#x3D;&quot;col-lg-7 container&quot;&gt;
         &lt;h2 class&#x3D;&quot;text-danger mb-4&quot;&gt;Demandez des Informations&lt;/h2&gt;
         &lt;p class&#x3D;&quot;text-muted&quot;&gt;Nous ferons de notre mieux pour vous répondre dès que possible.&lt;/p&gt;
-        &lt;form&gt;
+        &lt;form [formGroup]&#x3D;&quot;form&quot; (submit)&#x3D;&quot;send()&quot;&gt;
           &lt;div class&#x3D;&quot;row g-3 mb-3&quot;&gt;
-            &lt;div class&#x3D;&quot;col-sm-6 &quot;&gt;
-              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Prénom&quot; required&gt;
+            &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;First Name&quot; formControlName&#x3D;&quot;from_name&quot; formControlName&#x3D;&quot;firstName&quot; required /&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
-              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Nom&quot; required&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Last Name&quot; formControlName&#x3D;&quot;lastName&quot; required /&gt;
             &lt;/div&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;row g-3 mb-3&quot;&gt;
             &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
-              &lt;input type&#x3D;&quot;tel&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Numéro de téléphone&quot; required&gt;
+              &lt;input type&#x3D;&quot;tel&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;phone&quot; formControlName&#x3D;&quot;phone&quot; required /&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
-              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Sujet&quot; required&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;subject&quot; formControlName&#x3D;&quot;subject&quot; required /&gt;
             &lt;/div&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-            &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Adresse email&quot; required&gt;
+            &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control input&quot; placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot; required /&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-            &lt;textarea class&#x3D;&quot;form-control input&quot; rows&#x3D;&quot;4&quot; placeholder&#x3D;&quot;Laissez votre message&quot; required&gt;&lt;/textarea&gt;
+            &lt;textarea class&#x3D;&quot;form-control input&quot; rows&#x3D;&quot;4&quot; placeholder&#x3D;&quot;Message&quot; formControlName&#x3D;&quot;message&quot; required&gt;&lt;/textarea&gt;
           &lt;/div&gt;
+          &lt;!-- {{form.value | json}} --&gt;
           &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-danger px-5&quot;&gt;Envoyer maintenant&lt;/button&gt;
         &lt;/form&gt;
       &lt;/div&gt;
@@ -568,7 +608,7 @@ export class ContactComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Contact Section -->  <div class="container  contact-section" id="contact">    <div class="row gy-4">      <!-- Formulaire -->      <div class="col-lg-7 container">        <h2 class="text-danger mb-4">Demandez des Informations</h2>        <p class="text-muted">Nous ferons de notre mieux pour vous répondre dès que possible.</p>        <form>          <div class="row g-3 mb-3">            <div class="col-sm-6 ">              <input type="text" class="form-control input" placeholder="Prénom" required>            </div>            <div class="col-sm-6">              <input type="text" class="form-control input" placeholder="Nom" required>            </div>          </div>          <div class="row g-3 mb-3">            <div class="col-sm-6">              <input type="tel" class="form-control input" placeholder="Numéro de téléphone" required>            </div>            <div class="col-sm-6">              <input type="text" class="form-control input" placeholder="Sujet" required>            </div>          </div>          <div class="mb-3">            <input type="email" class="form-control input" placeholder="Adresse email" required>          </div>          <div class="mb-3">            <textarea class="form-control input" rows="4" placeholder="Laissez votre message" required></textarea>          </div>          <button type="submit" class="btn btn-danger px-5">Envoyer maintenant</button>        </form>      </div>      <!-- Informations de contact -->      <div class="col-lg-5">        <div class="contact-info">          <h3 class="text-danger">Vous avez une question ?</h3>          <p class="text-muted">Si vous avez des questions, n\'hésitez pas à nous envoyer un message.</p>          <div class="d-flex align-items-start mb-3">            <i class="bi bi-geo-alt me-3"></i>            <div>              <strong>Adresse</strong>              <p>38 Rue de la Glacière, 75013 PARIS - FRANCE</p>            </div>          </div>          <div class="d-flex align-items-start mb-3">            <i class="bi bi-envelope me-3"></i>            <div>              <strong>Email</strong>              <p>contact&#64;5ds.fr</p>            </div>          </div>          <div class="d-flex align-items-start">            <i class="bi bi-telephone me-3"></i>            <div>              <strong>Téléphone</strong>              <p>+33 6 35 397 899</p>            </div>          </div>        </div>      </div>    </div>  </div> <!-- <section id="contact" class="py-5 bg-light">    <div class="container">      <h2 class="text-center mb-4">Contactez-nous</h2>      <div class="row">        <div class="col-md-6">          <form>            <div class="mb-3">              <label for="nom" class="form-label">Nom</label>              <input                type="text"                class="form-control"                id="nom"                placeholder="Votre nom"              />            </div>            <div class="mb-3">              <label for="email" class="form-label">Email</label>              <input                type="email"                class="form-control"                id="email"                placeholder="Votre email"              />            </div>            <div class="mb-3">              <label for="message" class="form-label">Message</label>              <textarea                class="form-control"                id="message"                rows="5"                placeholder="Votre message"              ></textarea>            </div>            <button type="submit" class="btn btn-primary">Envoyer</button>          </form>        </div>        <div class="col-md-6">          <h5>Adresse :</h5>          <p>123 Rue des Entrepreneurs, Paris</p>          <h5>Téléphone :</h5>          <p>+33 1 23 45 67 89</p>          <h5>Email :</h5>          <p>contact&#64;5ds.fr</p>        </div>      </div>    </div>  </section>   --></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Contact Section -->  <div class="container  contact-section" id="contact">    <div class="row gy-4">      <!-- Formulaire -->      <div class="col-lg-7 container">        <h2 class="text-danger mb-4">Demandez des Informations</h2>        <p class="text-muted">Nous ferons de notre mieux pour vous répondre dès que possible.</p>        <form [formGroup]="form" (submit)="send()">          <div class="row g-3 mb-3">            <div class="col-sm-6">              <input type="text" class="form-control input" placeholder="First Name" formControlName="from_name" formControlName="firstName" required />            </div>            <div class="col-sm-6">              <input type="text" class="form-control input" placeholder="Last Name" formControlName="lastName" required />            </div>          </div>          <div class="row g-3 mb-3">            <div class="col-sm-6">              <input type="tel" class="form-control input" placeholder="phone" formControlName="phone" required />            </div>            <div class="col-sm-6">              <input type="text" class="form-control input" placeholder="subject" formControlName="subject" required />            </div>          </div>          <div class="mb-3">            <input type="email" class="form-control input" placeholder="Email" formControlName="email" required />          </div>          <div class="mb-3">            <textarea class="form-control input" rows="4" placeholder="Message" formControlName="message" required></textarea>          </div>          <!-- {{form.value | json}} -->          <button type="submit" class="btn btn-danger px-5">Envoyer maintenant</button>        </form>      </div>      <!-- Informations de contact -->      <div class="col-lg-5">        <div class="contact-info">          <h3 class="text-danger">Vous avez une question ?</h3>          <p class="text-muted">Si vous avez des questions, n\'hésitez pas à nous envoyer un message.</p>          <div class="d-flex align-items-start mb-3">            <i class="bi bi-geo-alt me-3"></i>            <div>              <strong>Adresse</strong>              <p>38 Rue de la Glacière, 75013 PARIS - FRANCE</p>            </div>          </div>          <div class="d-flex align-items-start mb-3">            <i class="bi bi-envelope me-3"></i>            <div>              <strong>Email</strong>              <p>contact&#64;5ds.fr</p>            </div>          </div>          <div class="d-flex align-items-start">            <i class="bi bi-telephone me-3"></i>            <div>              <strong>Téléphone</strong>              <p>+33 6 35 397 899</p>            </div>          </div>        </div>      </div>    </div>  </div> <!-- <section id="contact" class="py-5 bg-light">    <div class="container">      <h2 class="text-center mb-4">Contactez-nous</h2>      <div class="row">        <div class="col-md-6">          <form>            <div class="mb-3">              <label for="nom" class="form-label">Nom</label>              <input                type="text"                class="form-control"                id="nom"                placeholder="Votre nom"              />            </div>            <div class="mb-3">              <label for="email" class="form-label">Email</label>              <input                type="email"                class="form-control"                id="email"                placeholder="Votre email"              />            </div>            <div class="mb-3">              <label for="message" class="form-label">Message</label>              <textarea                class="form-control"                id="message"                rows="5"                placeholder="Votre message"              ></textarea>            </div>            <button type="submit" class="btn btn-primary">Envoyer</button>          </form>        </div>        <div class="col-md-6">          <h5>Adresse :</h5>          <p>123 Rue des Entrepreneurs, Paris</p>          <h5>Téléphone :</h5>          <p>+33 1 23 45 67 89</p>          <h5>Email :</h5>          <p>contact&#64;5ds.fr</p>        </div>      </div>    </div>  </section>   --></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarousellogoComponent', 'selector': 'app-carousellogo'},{'name': 'ConsultantsComponent', 'selector': 'app-consultants'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'ValuesComponent', 'selector': 'app-values'},{'name': 'WhyChooseUsComponent', 'selector': 'app-why-choose-us'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ContactComponent'};
