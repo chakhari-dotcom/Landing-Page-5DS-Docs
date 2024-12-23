@@ -19,9 +19,10 @@ export class CarousellogoComponent {
     {src: 'assets/carousellogo/logo5.png', alt: 'logo voice digit '},
 
   ]
+ 
   @ViewChild('carouselTrack') carouselTrack!: ElementRef;
   currentCenterIndex = 0; // Index du logo actuellement au centre
-  interval!:any
+  interval!: any;
 
   ngAfterViewInit() {
     this.startCarousel();
@@ -33,28 +34,25 @@ export class CarousellogoComponent {
     const slideWidth = slides[0].offsetWidth + 30; // Largeur d'une diapositive + marge
     let position = 0;
 
+    // Create clones for infinite loop
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+
     const moveToNextSlide = () => {
-      this.currentCenterIndex = (this.currentCenterIndex +1) % this.logos.length; // Passer au logo suivant
+      this.currentCenterIndex = (this.currentCenterIndex + 1) % this.logos.length; // Circular index
       position = -(this.currentCenterIndex * slideWidth);
       track.style.transition = 'transform 0.5s ease';
       track.style.transform = `translateX(${position}px)`;
 
-      // Pause lorsque le logo est au centre
-      clearInterval(this.interval);
+      clearInterval(this.interval); 
       setTimeout(() => {
-        this.interval = setInterval(moveToNextSlide,1500);
-      }, 1500); // Pause de 1,5 seconde
+        this.interval = setInterval(moveToNextSlide, 1500); // 1.5 seconds interval
+      }, 1500); 
     };
 
-    // Boucler infiniment
-
-    // Ajouter des clones pour l'effet infini
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[slides.length - 1].cloneNode(true);
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, slides[0]);
-
-    this.interval = setInterval(moveToNextSlide, 4000);
+    this.interval = setInterval(moveToNextSlide, 1500); // Start the carousel
   }
 
   
