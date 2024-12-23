@@ -1,3 +1,2 @@
-sphinx                 # Outil principal pour générer la documentation
-sphinx-rtd-theme       # Thème Read the Docs pour la documentation
-sphinx.ext.autodoc     # Extension pour la génération automatique de documentation (optionnel)
+sphinx                 
+sphinx-rtd-theme       
