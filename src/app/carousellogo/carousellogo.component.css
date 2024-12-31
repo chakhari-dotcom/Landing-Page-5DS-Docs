@@ -1,45 +1,13 @@
-.carousel-wrapper {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: 120px; /* Ajuster selon la taille de vos logos */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centrer verticalement */
 
+img {
+  
+  height: 110px;
+  max-width:40%;
   
 }
-
-.carousel-track {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centrer les logos dans chaque slide */
-  transition: transform 0.5s ease;
-  
-  
-
+.partner{
+    margin-left: 130px;
+    margin-bottom: 50px;
 }
 
-.carousel-slide {
-  flex: 0 0 auto;
-  min-width: 300px; /* Largeur d'une diapositive */
-  margin: 0 25px;
-  display: inline-block;
-  justify-content: center; /* Centrer horizontalement */
-  align-items: center; /* Centrer verticalement */
-  opacity: 1; /* Réduction de visibilité par défaut */
-  transition: opacity 0.5s ease, transform 0.5s ease;
 
-
-}
-
-.carousel-slide img {
-  max-height: 100px; /* Taille maximale des logos */
-  max-width: 100%; /* Limite la largeur pour éviter la déformation */
-  display: block;
-}
-
-.carousel-slide.center {
-  opacity: 1; /* Mettre en avant le logo au centre */
-  transform: scale(1.1); /* Zoom léger */
-}

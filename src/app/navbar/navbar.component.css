@@ -62,3 +62,6 @@ html {
     width: 150px;
     height: 70px;
 }
+.nav-link{
+    cursor: pointer;
+}

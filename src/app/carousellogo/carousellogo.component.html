@@ -1,9 +1,25 @@
-<div class="container my-5 ">
-  <h2 class="text-center mb-4">Nos Partenaires</h2>
+<div class="container my-5 partner">
+  <h2 class="text-center mb-4"></h2>
 
-  <div class="carousel-wrapper">
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container  *ngFor="let slide of logos">
+      <ng-template carouselSlide >
+        <img  [src]="slide.src" [alt]="slide.alt" >
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+  
+</div>
+
+
+
+
+<!-- <div class="carousel-wrapper">
     <div class="carousel-track" #carouselTrack>
-      <!-- Angular boucle pour afficher les logos -->
+      
       <div 
         class="carousel-slide" 
         *ngFor="let logo of logos; let i = index" 
@@ -11,8 +27,7 @@
         <img [src]="logo.src" [alt]="logo.alt" [attr.aria-label]="logo.alt" class="d-block mx-auto">
       </div>
     </div>
-  </div>
-</div>
+  </div> -->
 
 
 
